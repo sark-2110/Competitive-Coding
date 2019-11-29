@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long int s,t,a,b,m,n,c[100000],d[100000],i,e;
+    cin>>s>>t;
+    cin>>a>>b;
+    cin>>m>>n;
+    for(i=0;i<m;i++)
+    {
+        cin>>c[i];
+        
+    }
+    for(i=0;i<n;i++)
+    {
+        cin>>d[i];
+    }
+    int flag=0;
+    for(i=0;i<m;i++)
+    {
+        e=0;
+        e=a+c[i];
+        if((e>=s)&&(e<=t))
+        {
+            flag++;
+        }
+    }
+    int zero=0;
+    for(i=0;i<n;i++)
+    {
+        e=0;
+        e=b+d[i];
+        if((e>=s)&&(e<=t))
+        {
+            zero++;
+        }
+    }cout<<flag<<endl<<zero;
+    return 0;
+}

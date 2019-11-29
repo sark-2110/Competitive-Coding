@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+using namespace std;
+long sum;
+void check(long a)
+{
+    if(a==0)
+    {
+        sum+=6;
+    }
+    else if(a==1)
+    {
+        sum+=2;
+    }
+    else if(a==2)
+    {
+        sum+=5;
+    }
+    else if(a==3)
+    {
+        sum+=5;
+    }
+    else if(a==4)
+    {
+        sum+=4;
+    }else if(a==5)
+    {
+        sum+=5;
+    }else if(a==6)
+    {
+        sum+=6;
+    }else if(a==7)
+    {
+        sum+=3;
+    }else if(a==8)
+    {
+        sum+=7;
+    }
+    else if(a==9)
+    {
+        sum+=6;
+    }
+}
+int main()
+{
+    long a,b,c,t;
+    cin>>t;
+    while(t--)
+    {
+        sum=0;
+        cin>>a>>b;
+        c=a+b;
+        while(c!=0)
+        {
+            a=c%10;
+            c=c/10;
+            check(a);
+        }
+        cout<<sum<<endl;
+    }
+    
+}

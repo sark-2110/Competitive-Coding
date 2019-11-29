@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+   int n,sum=0,a[100],flag=0,m,d,i,j;
+   cin>>n;
+   for(i=0;i<n;i++)
+   {
+       cin>>a[i];
+   }
+   cin>>d>>m;
+   if(n>1){
+   for(i=0;i<n-1;i++)
+   {
+       sum=0;
+       for(j=i;j<n;j++)
+       {
+           sum+=a[j];
+           if((sum==d)&&(j==i+m-1))
+           {
+               flag++;//cout<<sum<<" ";
+           }
+           if(j==i+m-1)
+           {
+               break;
+           }
+           
+       }
+   }
+  }
+  else if(n==1)
+  {
+      if(a[0]==d)
+      {
+          flag++;
+      }
+  }
+   cout<<flag;
+   return 0;
+}

@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define n 10
+void delchar(char *x, int a, int b) {
+  if ((a + b - 1) <= strlen(x)) {
+    strcpy(&x[b - 1], &x[a + b - 1]);
+  }
+}
+int main() {
+  int i, flag = 0, v, e, f, g;
+  char d[n], a, b;
+  scanf("%s", d);
+  if (d[n - 2] == 'P') {
+    flag = 1;
+  }
+  if (flag == 1) {
+    a = d[0];
+    e = a;
+    v = e - 48;
+    b = d[1];
+    if (v == 0) {
+      b = b - 36;
+      delchar(d, 2, 0);
+      delchar(d, 2, 7);
+      printf("%d%s", b, d);
+    } else {
+      f = b - 48;
+      if (f == 0) {
+        f = 22;
+      } else if (f == 1) {
+        f = 23;
+      } else if (f == 2) {
+        f = 12;
+      }
+      delchar(d, 2, 0);
+      delchar(d, 2, 7);
+      printf("%d%s", f, d);
+    }
+
+  } else {
+    delchar(d, 2, 9);
+    a = d[0];
+    b = d[1];
+    if ((a == 49) && (b == 50)) {
+      a = 0;
+      b = 0;
+      delchar(d, 2, 0);
+      printf("%d%d%s", a, b, d);
+    } else {
+      printf("%s", d);
+    }
+  }
+  return 0;
+}

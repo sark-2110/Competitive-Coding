@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+    int a[100000],i,n,k;
+    long sum=0,d=0,charged;
+    scanf("%d%d",&n,&k);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%ld",&charged);
+    for(i=0;i<n;i++)
+    {
+        if(i!=k)
+        {
+            sum+=a[i];
+        }
+    }
+    sum= sum/2;
+    if(charged==sum)
+    {
+        printf("Bon Appetit");
+    }
+    else
+    {
+        charged = charged - sum;
+        printf("%ld",charged);
+    }
+}

@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+int a[10000000], max;
+void maximum(int i, int j) {
+  int max1, mid;
+  if (i == j) {
+    max = a[i];
+  } else {
+    if (i == j - 1) {
+      if (a[i] < a[j]) {
+        max = a[j];
+      } else {
+        max = a[i];
+      }
+    } else {
+      mid = (i + j) / 2;
+      maximum(i, mid);
+      max1 = max;
+      maximum(mid + 1, j);
+      if (max < max1)
+        max = max1;
+    }
+  }
+}
+int main() {
+  int i, n, flag = 0;
+  scanf("%d", &n);
+  for (i = 0; i < n; i++) {
+    scanf("%d", &a[i]);
+  }
+  maximum(0, n - 1);
+  for (i = 0; i < n; i++) {
+    if (a[i] == max) {
+      flag++;
+    }
+  }
+  printf("%d", flag);
+  return 0;
+}
